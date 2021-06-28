@@ -26,9 +26,6 @@ public class BookController {
 	@Autowired
 	private BookRepository bookRepo;
 	
-	@Autowired
-	private BookDao bookDao;
-	
 	@PostMapping("/book")
 	//@ApiOperation(value = "Add a book")
 	public ResponseEntity<Book> addBook(@RequestBody Book book) {
@@ -41,9 +38,7 @@ public class BookController {
 	//@ApiOperation(value = "Get all books")
 	public ResponseEntity<List<Book>> getAllBooks() {
 		
-		//List<Book> books = bookRepo.findAll();
-		
-		List<Book> books = bookDao.getBooks();
+		List<Book> books = bookRepo.findAll();
 		
 		return new ResponseEntity<>(books, HttpStatus.OK);
 	}
@@ -76,13 +71,10 @@ public class BookController {
 		}
 	}
 	
-	//@GetMapping(value = "/books/{isbn}")
-	//public ResponseEntity<Book> getBookByIsbn(@PathVariable("isbn") String isbn) {
-	
+	//@GetMapping(value = "/books/{book_id}")
 	@RequestMapping(value = "/books/{book_id}", method = RequestMethod.GET)
 	public ResponseEntity<Book> getBookByBookId(@PathVariable("book_id") int id) {
 		
-		//Book book = bookRepo.findBookByIsbn(isbn);
 		Book book = bookRepo.findBookByBookId(id);
 		return new ResponseEntity<>(book, HttpStatus.OK);
 	}
