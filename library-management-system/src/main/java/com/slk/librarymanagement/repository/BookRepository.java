@@ -9,4 +9,6 @@ import com.slk.librarymanagement.model.Book;
 public interface BookRepository extends JpaRepository<Book, Long>{
 	
 	Book findBookByIsbn(String isbn);
+	
+	Book findBookByBookId(int bookId);
 }
