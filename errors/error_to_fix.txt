@@ -1,0 +1,115 @@
+LibraryManagementApplication.java:7:	CommentRequired:	Class comments are required
+LibraryManagementApplication.java:9:	MethodArgumentCouldBeFinal:	Parameter 'args' is not assigned and could be declared final
+LibraryManagementApplication.java:9:	CommentRequired:	Public method and constructor comments are required
+controller/BookController.java:8:	UnnecessaryImport:	Unused import 'org.springframework.web.bind.annotation.DeleteMapping'
+controller/BookController.java:18:	UnnecessaryImport:	Unused import 'com.slk.librarymanagement.dao.BookDao'
+controller/BookController.java:24:	CommentRequired:	Class comments are required
+controller/BookController.java:27:	CommentRequired:	Field comments are required
+controller/BookController.java:27:	BeanMembersShouldSerialize:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+controller/BookController.java:31:	MethodArgumentCouldBeFinal:	Parameter 'book' is not assigned and could be declared final
+controller/BookController.java:31:	CommentRequired:	Public method and constructor comments are required
+controller/BookController.java:39:	CommentRequired:	Public method and constructor comments are required
+controller/BookController.java:41:	LocalVariableCouldBeFinal:	Local variable 'books' could be declared final
+controller/BookController.java:48:	MethodArgumentCouldBeFinal:	Parameter 'book' is not assigned and could be declared final
+controller/BookController.java:48:	MethodArgumentCouldBeFinal:	Parameter 'isbn' is not assigned and could be declared final
+controller/BookController.java:48:	CommentRequired:	Public method and constructor comments are required
+controller/BookController.java:50:	LocalVariableCouldBeFinal:	Local variable 'existingBook' could be declared final
+controller/BookController.java:52:	OnlyOneReturn:	A method should have only one exit point, and that should be the last statement in the method
+controller/BookController.java:52:	ControlStatementBraces:	This statement should have braces
+controller/BookController.java:62:	MethodArgumentCouldBeFinal:	Parameter 'isbn' is not assigned and could be declared final
+controller/BookController.java:62:	CommentRequired:	Public method and constructor comments are required
+controller/BookController.java:64:	LocalVariableCouldBeFinal:	Local variable 'existingBook' could be declared final
+controller/BookController.java:66:	OnlyOneReturn:	A method should have only one exit point, and that should be the last statement in the method
+controller/BookController.java:66:	ControlStatementBraces:	This statement should have braces
+controller/BookController.java:76:	ShortVariable:	Avoid variables with short names like id
+controller/BookController.java:76:	MethodArgumentCouldBeFinal:	Parameter 'id' is not assigned and could be declared final
+controller/BookController.java:76:	CommentRequired:	Public method and constructor comments are required
+controller/BookController.java:78:	LocalVariableCouldBeFinal:	Local variable 'book' could be declared final
+controller/UserController.java:3:	CommentRequired:	Class comments are required
+dao/BookDao.java:7:	CommentRequired:	Class comments are required
+dao/BookDao.java:9:	CommentRequired:	Public method and constructor comments are required
+dao/BookDao.java:9:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'addBook': the method is declared in an interface type
+dao/BookDao.java:11:	CommentRequired:	Public method and constructor comments are required
+dao/BookDao.java:11:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'getBooks': the method is declared in an interface type
+dao/BookDao.java:13:	CommentRequired:	Public method and constructor comments are required
+dao/BookDao.java:13:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'updateBook': the method is declared in an interface type
+dao/BookDao.java:15:	CommentRequired:	Public method and constructor comments are required
+dao/BookDao.java:15:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'removeBook': the method is declared in an interface type
+dao/UserDao.java:7:	CommentRequired:	Class comments are required
+dao/UserDao.java:9:	CommentRequired:	Public method and constructor comments are required
+dao/UserDao.java:9:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'addUser': the method is declared in an interface type
+dao/UserDao.java:11:	CommentRequired:	Public method and constructor comments are required
+dao/UserDao.java:11:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'getUsers': the method is declared in an interface type
+dao/UserDao.java:13:	CommentRequired:	Public method and constructor comments are required
+dao/UserDao.java:13:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'updateUser': the method is declared in an interface type
+dao/UserDao.java:15:	CommentRequired:	Public method and constructor comments are required
+dao/UserDao.java:15:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'removeUser': the method is declared in an interface type
+exception/CustomExceptionHandler.java:3:	CommentRequired:	Class comments are required
+exception/ErrorResponse.java:3:	CommentRequired:	Class comments are required
+model/Book.java:12:	CommentRequired:	Class comments are required
+model/Book.java:16:	CommentRequired:	Field comments are required
+model/Book.java:19:	CommentRequired:	Field comments are required
+model/Book.java:22:	CommentRequired:	Field comments are required
+model/Book.java:24:	CommentRequired:	Field comments are required
+model/Book.java:26:	CommentRequired:	Field comments are required
+model/Book.java:28:	CommentRequired:	Public method and constructor comments are required
+model/Book.java:32:	MethodArgumentCouldBeFinal:	Parameter 'author' is not assigned and could be declared final
+model/Book.java:32:	MethodArgumentCouldBeFinal:	Parameter 'bookId' is not assigned and could be declared final
+model/Book.java:32:	MethodArgumentCouldBeFinal:	Parameter 'isbn' is not assigned and could be declared final
+model/Book.java:32:	MethodArgumentCouldBeFinal:	Parameter 'publisher' is not assigned and could be declared final
+model/Book.java:32:	MethodArgumentCouldBeFinal:	Parameter 'title' is not assigned and could be declared final
+model/Book.java:32:	CommentRequired:	Public method and constructor comments are required
+model/Book.java:45:	MethodArgumentCouldBeFinal:	Parameter 'bookId' is not assigned and could be declared final
+model/Book.java:53:	MethodArgumentCouldBeFinal:	Parameter 'title' is not assigned and could be declared final
+model/Book.java:61:	MethodArgumentCouldBeFinal:	Parameter 'isbn' is not assigned and could be declared final
+model/Book.java:69:	MethodArgumentCouldBeFinal:	Parameter 'author' is not assigned and could be declared final
+model/Book.java:77:	MethodArgumentCouldBeFinal:	Parameter 'publisher' is not assigned and could be declared final
+model/User.java:12:	CommentRequired:	Class comments are required
+model/User.java:16:	CommentRequired:	Field comments are required
+model/User.java:19:	CommentRequired:	Field comments are required
+model/User.java:22:	CommentRequired:	Field comments are required
+model/User.java:25:	CommentRequired:	Field comments are required
+model/User.java:28:	CommentRequired:	Public method and constructor comments are required
+model/User.java:32:	MethodArgumentCouldBeFinal:	Parameter 'emailId' is not assigned and could be declared final
+model/User.java:32:	MethodArgumentCouldBeFinal:	Parameter 'firstName' is not assigned and could be declared final
+model/User.java:32:	MethodArgumentCouldBeFinal:	Parameter 'lastName' is not assigned and could be declared final
+model/User.java:32:	MethodArgumentCouldBeFinal:	Parameter 'userId' is not assigned and could be declared final
+model/User.java:32:	CommentRequired:	Public method and constructor comments are required
+model/User.java:44:	MethodArgumentCouldBeFinal:	Parameter 'userId' is not assigned and could be declared final
+model/User.java:52:	MethodArgumentCouldBeFinal:	Parameter 'firstName' is not assigned and could be declared final
+model/User.java:60:	MethodArgumentCouldBeFinal:	Parameter 'lastName' is not assigned and could be declared final
+model/User.java:68:	MethodArgumentCouldBeFinal:	Parameter 'emailId' is not assigned and could be declared final
+repository/BookRepository.java:9:	CommentRequired:	Class comments are required
+repository/BookRepository.java:11:	CommentRequired:	Public method and constructor comments are required
+repository/BookRepository.java:13:	CommentRequired:	Public method and constructor comments are required
+repository/UserRepository.java:9:	CommentRequired:	Class comments are required
+service/BookService.java:7:	CommentRequired:	Class comments are required
+service/BookService.java:9:	CommentRequired:	Public method and constructor comments are required
+service/BookService.java:9:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'addBook': the method is declared in an interface type
+service/BookService.java:11:	CommentRequired:	Public method and constructor comments are required
+service/BookService.java:11:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'getBooks': the method is declared in an interface type
+service/BookService.java:13:	CommentRequired:	Public method and constructor comments are required
+service/BookService.java:13:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'updateBook': the method is declared in an interface type
+service/BookService.java:15:	CommentRequired:	Public method and constructor comments are required
+service/BookService.java:15:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'removeBook': the method is declared in an interface type
+service/UserService.java:7:	CommentRequired:	Class comments are required
+service/UserService.java:9:	CommentRequired:	Public method and constructor comments are required
+service/UserService.java:9:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'addUser': the method is declared in an interface type
+service/UserService.java:11:	CommentRequired:	Public method and constructor comments are required
+service/UserService.java:11:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'getUsers': the method is declared in an interface type
+service/UserService.java:13:	CommentRequired:	Public method and constructor comments are required
+service/UserService.java:13:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'updateUser': the method is declared in an interface type
+service/UserService.java:15:	CommentRequired:	Public method and constructor comments are required
+service/UserService.java:15:	UnnecessaryModifier:	Unnecessary modifier 'public' on method 'removeUser': the method is declared in an interface type
+service/impl/BookServiceImpl.java:11:	CommentRequired:	Class comments are required
+service/impl/BookServiceImpl.java:14:	MethodArgumentCouldBeFinal:	Parameter 'book' is not assigned and could be declared final
+service/impl/BookServiceImpl.java:26:	MethodArgumentCouldBeFinal:	Parameter 'book' is not assigned and could be declared final
+service/impl/BookServiceImpl.java:32:	MethodArgumentCouldBeFinal:	Parameter 'book' is not assigned and could be declared final
+service/impl/UserServiceImpl.java:11:	CommentRequired:	Class comments are required
+service/impl/UserServiceImpl.java:14:	MethodArgumentCouldBeFinal:	Parameter 'user' is not assigned and could be declared final
+service/impl/UserServiceImpl.java:26:	MethodArgumentCouldBeFinal:	Parameter 'user' is not assigned and could be declared final
+service/impl/UserServiceImpl.java:32:	MethodArgumentCouldBeFinal:	Parameter 'user' is not assigned and could be declared final
+/Users/dilip/Documents/LibraryManagement/library-management-system/src/test/java/com/service/librarymanagementsystem/LibraryManagementSystemApplicationTests.java:7:	CommentRequired:	Class comments are required
+/Users/dilip/Documents/LibraryManagement/library-management-system/src/test/java/com/service/librarymanagementsystem/LibraryManagementSystemApplicationTests.java:10:	UncommentedEmptyMethodBody:	Document empty method body
+/Users/dilip/Documents/LibraryManagement/library-management-system/src/test/java/com/service/librarymanagementsystem/LibraryManagementSystemApplicationTests.java:10:	CommentDefaultAccessModifier:	To avoid mistakes add a comment at the beginning of the contextLoads method if you want a default access modifier
+LoosePackageCoupling	-	No packages or classes specified
