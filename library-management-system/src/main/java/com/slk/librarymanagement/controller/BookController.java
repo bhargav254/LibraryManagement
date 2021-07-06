@@ -99,30 +99,11 @@ public class BookController {
 		}
 	}
 	
-	
-	/**
-	 * @param id
-	 * @return
-	 */
-	@GetMapping(value = "/books/{book_id}")
-	@ApiOperation(value = "Find book by book id")
+	@GetMapping(value = "/books/{isbn}")
+	@ApiOperation(value = "Get a book by book id")
 	public ResponseEntity<Book> getBookByBookId(@PathVariable("book_id") int id) {
 		
-		final Book book = bookService.getBookByBookId(id);
-		return new ResponseEntity<>(book, HttpStatus.OK);
-	}
-	
-	
-	/**
-	 * @param isbn
-	 * @param publisher
-	 * @return
-	 */
-	@GetMapping(value = "/books/{isbn}/{publisher}")
-	@ApiOperation(value = "Find book by isbn and publisher")
-	public ResponseEntity<Book> getBook(@PathVariable("isbn") String isbn, @PathVariable("publisher") String publisher) {
-		
-		final Book book = bookRepo.findBook(isbn, publisher);
+		Book book = bookRepo.findBookByBookId(id);
 		return new ResponseEntity<>(book, HttpStatus.OK);
 	}
 }
