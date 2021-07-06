@@ -6,11 +6,11 @@ import com.slk.librarymanagement.model.Book;
 
 public interface BookDao {
 
-	public Book addBook(Book book);
+	Book addBook(Book book);
 	
-	public List<Book> getBooks();
+	List<Book> getBooks();
 	
-	public Book updateBook(Book book);
+	Book updateBook(Book book);
 	
-	public boolean removeBook(Book book);
+	boolean removeBook(Book book);
 }

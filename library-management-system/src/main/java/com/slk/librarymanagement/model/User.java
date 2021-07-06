@@ -26,7 +26,7 @@ public class User {
 
 	
 	public User() {
-		super();
+		// Default constructor
 	}
 
 	public User(int userId, String firstName, String lastName, String emailId) {
@@ -68,6 +68,11 @@ public class User {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", emailId=" + emailId
+				+ "]";
+	}
 	
 }

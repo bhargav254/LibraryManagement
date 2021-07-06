@@ -12,13 +12,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.slk.librarymanagement.dao.BookDao;
 import com.slk.librarymanagement.model.Book;
 import com.slk.librarymanagement.repository.BookRepository;
+import com.slk.librarymanagement.service.BookService;
 
+import io.swagger.annotations.ApiOperation;
+
+/**
+ * @author bhargav
+ * This is a controller class
+ */
 @RestController
 @RequestMapping("/api")
 public class BookController {
@@ -27,63 +32,97 @@ public class BookController {
 	private BookRepository bookRepo;
 	
 	@Autowired
-	private BookDao bookDao;
+	private BookService bookService;
 	
+	/**
+	 * @param book
+	 * @return
+	 */
 	@PostMapping("/book")
-	//@ApiOperation(value = "Add a book")
+	@ApiOperation(value = "Add a book")
 	public ResponseEntity<Book> addBook(@RequestBody Book book) {
 		
-		bookRepo.save(book);
-		return new ResponseEntity<>(book, HttpStatus.CREATED);
+		final Book savedBook = bookService.addBook(book);
+		return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
 	}
 	
+	
+	/**
+	 * @return
+	 */
 	@GetMapping("/books")
-	//@ApiOperation(value = "Get all books")
+	@ApiOperation(value = "Get all books")
 	public ResponseEntity<List<Book>> getAllBooks() {
 		
-		//List<Book> books = bookRepo.findAll();
-		
-		List<Book> books = bookDao.getBooks();
-		
-		return new ResponseEntity<>(books, HttpStatus.OK);
+		final List<Book> bookList = bookService.getBooks();
+		return new ResponseEntity<>(bookList, HttpStatus.OK);
 	}
 	
+	
+	/**
+	 * @param isbn
+	 * @param book
+	 * @return
+	 */
 	@PutMapping("/books/{isbn}")
-	//@ApiOperation(value = "Update a book")
+	@ApiOperation(value = "Update a book")
 	public ResponseEntity<Book> updateBook(@PathVariable("isbn") String isbn, @RequestBody Book book) {
 		
-		Book existingBook = bookRepo.findBookByIsbn(isbn);
+		final Book existingBook = bookRepo.findBookByIsbn(isbn);
+		Book updatedBook;
+		
 		if(existingBook == null)
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		else
 		{
-			bookRepo.save(book);
-			return new ResponseEntity<>(book, HttpStatus.OK);
+			updatedBook = bookService.updateBook(book);
+			return new ResponseEntity<>(updatedBook, HttpStatus.OK);
 		}
 	}
 	
-	//@DeleteMapping(value = "/books/{isbn}")
-	@RequestMapping(value = "/books/{isbn}", method = RequestMethod.DELETE)
+	
+	/**
+	 * @param isbn
+	 * @return
+	 */
+	@DeleteMapping(value = "/books/{isbn}")
+	@ApiOperation(value = "Delete a book")
 	public ResponseEntity<Void> deleteBook(@PathVariable("isbn") String isbn) {
 		
-		Book existingBook = bookRepo.findBookByIsbn(isbn);
+		final Book existingBook = bookRepo.findBookByIsbn(isbn);
 		if(existingBook == null)
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		else
 		{
-			bookRepo.delete(existingBook);
+			bookService.removeBook(existingBook);
 			return new ResponseEntity<>(HttpStatus.OK);
 		}
 	}
 	
-	//@GetMapping(value = "/books/{isbn}")
-	//public ResponseEntity<Book> getBookByIsbn(@PathVariable("isbn") String isbn) {
 	
-	@RequestMapping(value = "/books/{book_id}", method = RequestMethod.GET)
+	/**
+	 * @param id
+	 * @return
+	 */
+	@GetMapping(value = "/books/{book_id}")
+	@ApiOperation(value = "Find book by book id")
 	public ResponseEntity<Book> getBookByBookId(@PathVariable("book_id") int id) {
 		
-		//Book book = bookRepo.findBookByIsbn(isbn);
-		Book book = bookRepo.findBookByBookId(id);
+		final Book book = bookService.getBookByBookId(id);
+		return new ResponseEntity<>(book, HttpStatus.OK);
+	}
+	
+	
+	/**
+	 * @param isbn
+	 * @param publisher
+	 * @return
+	 */
+	@GetMapping(value = "/books/{isbn}/{publisher}")
+	@ApiOperation(value = "Find book by isbn and publisher")
+	public ResponseEntity<Book> getBook(@PathVariable("isbn") String isbn, @PathVariable("publisher") String publisher) {
+		
+		final Book book = bookRepo.findBook(isbn, publisher);
 		return new ResponseEntity<>(book, HttpStatus.OK);
 	}
 }

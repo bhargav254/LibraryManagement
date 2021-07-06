@@ -26,7 +26,7 @@ public class Book {
 	private String publisher;
 	
 	public Book() {
-		super();
+		// Default constructor
 	}
 
 	public Book(int bookId, String title, String isbn, String author, String publisher) {
@@ -76,6 +76,12 @@ public class Book {
 
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [bookId=" + bookId + ", title=" + title + ", isbn=" + isbn + ", author=" + author + ", publisher="
+				+ publisher + "]";
 	}
 	
 }

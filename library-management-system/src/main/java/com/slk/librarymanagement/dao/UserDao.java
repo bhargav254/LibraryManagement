@@ -6,11 +6,11 @@ import com.slk.librarymanagement.model.User;
 
 public interface UserDao {
 
-	public User addUser(User user);
+	User addUser(User user);
 	
-	public List<User> getUsers();
+	List<User> getUsers();
 	
-	public User updateUser(User user);
+	User updateUser(User user);
 	
-	public boolean removeUser(User user);
+	boolean removeUser(User user);
 }
