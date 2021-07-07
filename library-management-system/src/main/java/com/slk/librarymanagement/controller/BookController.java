@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,7 @@ import io.swagger.annotations.ApiOperation;
  * @author bhargav
  * This is a controller class
  */
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
 public class BookController {
@@ -99,11 +101,30 @@ public class BookController {
 		}
 	}
 	
+	
+	/**
+	 * @param id
+	 * @return
+	 */
 	@GetMapping(value = "/books/{isbn}")
 	@ApiOperation(value = "Get a book by book id")
 	public ResponseEntity<Book> getBookByBookId(@PathVariable("book_id") int id) {
 		
 		Book book = bookRepo.findBookByBookId(id);
+		return new ResponseEntity<>(book, HttpStatus.OK);
+	}
+	
+	
+	/**
+	 * @param isbn
+	 * @param publisher
+	 * @return
+	 */
+	@GetMapping(value = "/books/{isbn}/{publisher}")
+	@ApiOperation(value = "Find book by isbn and publisher")
+	public ResponseEntity<Book> getBook(@PathVariable("isbn") String isbn, @PathVariable("publisher") String publisher) {
+
+		final Book book = bookRepo.findBook(isbn, publisher);
 		return new ResponseEntity<>(book, HttpStatus.OK);
 	}
 }
